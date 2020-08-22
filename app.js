@@ -1,10 +1,8 @@
 const http = require('http');
 
-const server = http.createServer((req, res) => {
-  res.statusCode = 200;
-  res.setHeader('Content-Type', 'text/plain');
-  res.end('Hola Mundo Gestor de Aplecaciones\n');
-});
+http.createServer(function(request, response) {
+  response.writeHead(200, {'Content-Type': 'text/plain'});
+  response.end("Hola Mundo Gestor de Aplicaciones, FS!\n");
+}).listen(process.env.PORT);
 
-
-  console.log('El servidor esta corriendo YrL');
+console.log('App is running...');
